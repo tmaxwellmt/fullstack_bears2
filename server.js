@@ -11,6 +11,14 @@ mongoose.connect("mongodb://localhost/animals");
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json()); // for parsing application/json
 
+app.set('view engine', 'ejs');
+
+var me = { name: "Tyler", email: "tmaxwellmt@gmail.com" };
+
+app.get('/about', function (req, res) {
+  res.send('about', { data: me });
+})
+
 app.get('/', function (req, res){
   res.send("hello World!! please to meet you");
 });
