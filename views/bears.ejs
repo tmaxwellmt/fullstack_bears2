@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to EJS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class= "jumbotron">
+        <h2><%= welcome %></h2>
+      </div>
+      <div class="container">
+        <form id="newBear" class="table table-striped">
+          <div class="form-group">
+            <label for="exampleInputName2">Bear Name</label>
+            <input id="name" type="text" class="form-control" name="name" placeholder="bear name">
+          </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Bear species</label>
+          <input id="species" type="text" class="form-control" species="species" placeholder="bear species">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Bear age</label>
+          <input id="age" type="text" class="form-control" age="age" placeholder="bear age">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Bear weight</label>
+          <input id="weight" type="text" class="form-control" weight="weight" placeholder="bear weight">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Bear location</label>
+          <input id="location" type="text" class="form-control" location="location" placeholder="bear location">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">Bear attitude</label>
+          <input id="attitude" type="text" class="form-control" attitude="attitude" placeholder="bear attitude">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Make Bear</button>
+          <button id="update_bear" type="update" class="btn btn-default btn-lg btn-block">Update Bear</button>
+        </div>
+    </form>
+      <table class="table table-hover">
+        <thead>
+           <tr>
+             <th><strong>Name</strong></th>
+             <th><strong>Species</strong></th>
+             <th><strong>Weight</strong></th>
+             <th><strong>Location</strong></th>
+             <th><strong>Age</strong></th>
+             <th><strong>Attitude</strong></th>
+          </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i<bears.length; i++) { %>
+          <tr>
+            <td><%= bears[i].name %></td>
+            <td><%= bears[i].species %></td>
+            <td><%= bears[i].weight %></td>
+            <td><%= bears[i].location %></td>
+            <td><%= bears[i].age %></td>
+            <td><%= bears[i].attitude %></td>
+            <td><button id="<%= bears[i]._id %>" class="btn btn-primary delete-btn">Delete</button></td>
+            <!-- <td><button id="<%= bears[i]._id %>" class="btn btn-primary update">Update</button></td> -->
+          </tr>
+          <% } %>
+        </tbody>
+      </tabl>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
