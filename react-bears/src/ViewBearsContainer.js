@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import BearsList froms './Bearslist';
+import BearsList from './BearsList';
 
 var ViewBearsContainer = React.createClass({
   getInitialState: function () {
@@ -34,12 +34,12 @@ var ViewBearsContainer = React.createClass({
   updateBearHandler: function (id) {
     this.props.setActiveComp("activeID", id);
     this.props.setActiveComp("activeID", id);
-  }
+  },
 
   render () {
     return (
       <div>
-        <h1>This is where we view the Bears</h1>
+        <BearsList bears={this.state.bears ? this.state.bears: []}/>
       </div>
     )
   }

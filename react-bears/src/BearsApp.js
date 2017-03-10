@@ -33,7 +33,7 @@ renderProperComp: function () {
 render: function () {
   return (
     <div>
-      {this.renderProperComp}
+      {this.renderProperComp()}
     </div>
   )
 }

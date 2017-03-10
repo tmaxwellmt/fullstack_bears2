@@ -1,6 +1,6 @@
 import React from 'react';
 
-var editBearsContainer = React.createClass({
+var EditBearsContainer = React.createClass({
   render () {
     return (
       <div>

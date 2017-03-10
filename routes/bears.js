@@ -1,5 +1,5 @@
 var express = require('express');
-var Bear = require('../models/Bears');
+var Bear = require('../models/bears2');
 var router = express.Router();
 
 router.use(function (req, res, next) {
@@ -8,8 +8,8 @@ router.use(function (req, res, next) {
 });
 
 
-router.route('/bears');
-  get(function (req, res) {
+router.route('/')
+  .get(function (req, res) {
     Bear.find(function (err, bearData) {
       if (err) {
         console.log("You Can't Code");
@@ -35,7 +35,7 @@ router.route('/bears');
   });
 });
 
-router.route('./bears/:bear_id')
+router.route('/:bear_id')
   .get(function (req, res) {
     var bear_id = req.params.bear_id;
     Bear.findById(bear_id, function (err, bearData) {
@@ -70,3 +70,5 @@ router.route('./bears/:bear_id')
     }
   })
 });
+
+module.exports = router

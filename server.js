@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var Bear = require('./models/bears2');
 var app = express();
 
-var bearRouter =require('./routes/bears');
+var bearRouter = require('./routes/bears');
 
 var mongoose = require('mongoose');
 
@@ -48,7 +48,7 @@ app.delete('/api/bears/:bear_id', function(req, res) {
   });
 });
 
-app.use('/api', bearRouter);
+app.use('/api/bears', bearRouter);
 
 app.listen(3000);
 
